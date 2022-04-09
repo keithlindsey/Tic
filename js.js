@@ -10,6 +10,51 @@ const player_O = 'o'
 const player_X = 'x'
 let currentPlayer = player_O
 let space=[null,null,null, null,null,null,null,null,null]
+//input buttons_____________________________________________
+const p1Button= document.getElementById("p1")
+const p1Text = document.getElementById('inputOne')
+const out1 = document.getElementById('pOne')
+
+
+
+function fun1(){
+    out1.innerHTML = p1Text.value + " is O and goes first!!!"
+    p1Text.value =""
+}
+
+
+p1Button.addEventListener('click', fun1 )
+
+const p2button = document.getElementById("p2")
+const p2Text = document.getElementById('inputTwo')
+const out2 = document.getElementById('pTwo')
+
+
+
+
+function fun2(){
+    out2.innerHTML = p2Text.value + " is X and goes second!!!"
+    p2Text.value = ""
+    
+}
+
+p2button.addEventListener('click', fun2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Style____________________________________________________________________________
 
@@ -43,9 +88,15 @@ for (const box of boxes) {
 }
 resetButton.addEventListener('click', reset)
 console.log("clicked");
+
 //style_____________________________________________________________________________
 
-console.log(space)
+
+
+
+
+
+
 function clickedBox(e){
     
     let id =e.target.id;
@@ -128,5 +179,10 @@ function reset(){
     console.log('player: ', currentPlayer)
     console.log('dataSet: ', space)
    message.innerText= "Tic Tac Toe"
+   out2.innerHTML= ""
+   out1.innerHTML= ""
+  
+
+
 }
     

@@ -42,7 +42,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 150ox;
+    font-size: 150px;
     color: red;
    
 }
@@ -55,5 +55,10 @@ button {
     border-radius: 15px 15px 15px 15px;
     border-top: 30px;
 }
-  
 
+#pOne {
+    font-size: 25px;
+}
+ #pTwo {
+     font-size: 25px;
+ }
