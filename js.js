@@ -14,45 +14,49 @@ let space=[null,null,null, null,null,null,null,null,null]
 const p1Button= document.getElementById("p1")
 const p1Text = document.getElementById('inputOne')
 const out1 = document.getElementById('pOne')
+const gameBoard = document.getElementById('gameboard')
+const nameArray = []
 
-
+//names---------------------------------------------------------
 
 function fun1(){
     out1.innerHTML = p1Text.value + " is O and goes first!!!"
+    nameArray.push(p1Text.value)
+    console.log(nameArray);
     p1Text.value =""
+
+
+
 }
-
-
 p1Button.addEventListener('click', fun1 )
 
 const p2button = document.getElementById("p2")
 const p2Text = document.getElementById('inputTwo')
 const out2 = document.getElementById('pTwo')
 
-
-
-
 function fun2(){
     out2.innerHTML = p2Text.value + " is X and goes second!!!"
+    nameArray.push(p2Text.value)
+    console.log(nameArray);
+
+    
+
     p2Text.value = ""
+
+    
     
 }
 
 p2button.addEventListener('click', fun2)
 
+// debugger
+//  while (nameArray.length <1){
+//     gameBoard.style.display = "none"
+
+//  }
 
 
-
-
-
-
-
-
-
-
-
-
-
+//gameBoard.style.display = "none"
 
 
 
@@ -91,12 +95,6 @@ console.log("clicked");
 
 //style_____________________________________________________________________________
 
-
-
-
-
-
-
 function clickedBox(e){
     
     let id =e.target.id;
@@ -107,7 +105,7 @@ function clickedBox(e){
         e.target.innerText= currentPlayer
         if(winning()){
             message.innerText = `${currentPlayer} wins!!`;
-            debugger
+            // debugger
             space.fill(1)
             
             return;
@@ -181,7 +179,7 @@ function reset(){
    message.innerText= "Tic Tac Toe"
    out2.innerHTML= ""
    out1.innerHTML= ""
-  
+   
 
 
 }
